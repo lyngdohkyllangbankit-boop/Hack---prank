@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security Terminal</title>
+<style>
+body {
+  background: #050807;
+  color: #00ff66;
+  font-family: monospace;
+  padding: 20px;
+}
+h2 { color: #00ff66; }
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Security Alert</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: black;
+  color: #00ff41;
+  font-family: monospace;
+  text-align: center;
+  overflow: hidden;
+}
+
+#terminal {
+  height: 48vh;
+  overflow: hidden;
+  text-align: left;
+  padding: 15px;
+  font-size: 13px;
+  opacity: .8;
+  word-break: break-all;
+}
+
+.warning {
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+  animation: blink .6s infinite;
+  margin: 20px 8px;
+}
+
+@keyframes blink {
+  50% { opacity: .2; }
+}
+
+button {
+  background: #00ff41;
+  color: black;
+  border: none;
+  padding: 16px 25px;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#reveal {
+  display: none;
+  color: white;
+  font-size: 28px;
+  margin: 30px 10px;
+}
+
+#reveal span {
+  color: #00ff41;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="terminal"></div>
+
+<div id="main">
+  <h2>⚠ SYSTEM SECURITY ALERT ⚠</h2>
+
+  <div class="warning">
+    YOUR PHONE HAS BEEN HACKED!
+  </div>
+
+  <p>Unauthorized access detected...</p>
+  <p id="status">Initializing security scan...</p>
+
+  <button onclick="startPrank()">
+    TAP TO SCAN PHONE
+  </button>
+</div>
+
+<div id="reveal">
+  🤣🤣🤣<br><br>
+  <span>YOU'VE BEEN HACKED!</span>
+  <br><br>
+  JUST KIDDING! 😜
+  <p>Your phone is completely fine!</p>
+</div>
+
+<script>
+const terminal = document.getElementById("terminal");
+
+const messages = [
+ "[SYSTEM] Initializing...",
+ "[SCAN] Checking device...",
+ "[NETWORK] Connection established...",
+ "[SECURITY] Running fake diagnostic...",
+ "[ACCESS] Simulation started...",
+ "[WARNING] Suspicious activity detected...",
+ "[SYSTEM] Loading prank sequence..."
+];
+
+function addCode() {
+  const line = document.createElement("div");
+  line.textContent =
+    messages[Math.floor(Math.random()*messages.length)] +
+    " 0x" + Math.random().toString(16).slice(2,10);
+
+  terminal.appendChild(line);
+
+  if (terminal.children.length > 35) {
+    terminal.removeChild(terminal.firstChild);
+  }
+}
+
+setInterval(addCode, 250);
+
+function startPrank() {
+  if (navigator.vibrate) {
+    navigator.vibrate([300,100,300,100,600]);
+  }
+
+  document.getElementById("status").textContent =
+    "Fake scan complete...";
+
+  document.getElementById("main").style.display = "none";
+  document.getElementById("terminal").style.display = "none";
+
+  document.getElementById("reveal").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
+#terminal { line-height: 2; }
+#reveal {
+  display: none;
+  text-align: center;
+  margin-top: 60px;
+}
+h1 { color: red; }
+button {
+  padding: 14px 25px;
+  background: #00ff66;
+  border: none;
+  border-radius: 8px;
+}
+</style>
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bankit's Ghost Terminal 👻</title>
+
+<style>
+body {
+  background: #050807;
+  color: #00ff66;
+  font-family: monospace;
+  padding: 20px;
+}
+header {
+  text-align: center;
+  font-size: 22px;
+  color: #00ff66;
+}
+.name {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+#terminal {
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+#reveal {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+h1 {
+  color: red;
+}
+.ghost {
+  font-size: 65px;
+}
+button {
+  padding: 14px 25px;
+  background: #00ff66;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>👻 BANKIT'S GHOST TERMINAL 👻</header>
+
+<p class="name">Created by BANKIT</p>
+
+<hr>
+
+<p>STATUS: ONLINE 🟢</p>
+
+<div id="terminal"></div>
+
+<div id="reveal">
+  <div class="ghost">👻</div>
+  <h1>YOU'VE BEEN HACKED!</h1>
+  <h2>JUST KIDDING 😂</h2>
+  <p>A ghost prank by BANKIT!</p>
+  <button onclick="location.reload()">REPLAY 👻</button>
+</div>
+
+<script>
+const messages = [
+"> Welcome to Bankit's Ghost Terminal 👻",
+"> Starting visual simulation...",
+"> Connecting to demo server...",
+"> Scanning fictional network...",
+"> Detecting spooky activity...",
+"> Ghost detected 👻",
+"> Simulation completed!"
+];
+
+let i = 0;
+
+function run() {
+  if (i < messages.length) {
+    document.getElementById("terminal").innerHTML +=
+      messages[i] + "<br>";
+    i++;
+    setTimeout(run, 1500);
+  } else {
+    setTimeout(() => {
+      document.getElementById("terminal").style.display = "none";
+      document.getElementById("reveal").style.display = "block";
+    }, 1500);
+  }
+}
+
+run();
+</script>
+
+</body>
+</html>
+<body>
+
+<h2>HACKER TERMINAL</h2>
+<p>STATUS: ONLINE</p>
+<hr>
+
+<div id="terminal"></div>
+
+<div id="reveal">
+<h1>YOU'VE BEEN HACKED!</h1>
+<h2>JUST KIDDING 😂</h2>
+<p>This was only a prank!</p>
+<button onclick="location.reload()">REPLAY</button>
+</div>
+
+<script>
+const messages = [
+"> Starting visual simulation...",
+"> Connecting to demo server...",
+"> Checking fictional network...",
+"> Analyzing demo data...",
+"> Running security simulation...",
+"> Simulation completed!"
+];
+
+let i = 0;
+
+function run() {
+ if (i < messages.length) {
+  document.getElementById("terminal").innerHTML += messages[i] + "<br>";
+  i++;
+  setTimeout(run, 1500);
+ } else {
+  setTimeout(() => {
+   document.getElementById("terminal").style.display = "none";
+   document.getElementById("reveal").style.display = "block";
+  }, 1500);
+ }
+}
+run();
+</script>
+
+</body>
+</html>
+
+0
+
